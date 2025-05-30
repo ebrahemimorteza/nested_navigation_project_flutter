@@ -13,7 +13,7 @@ class Connection extends StatelessWidget {
     return Container(
       child: Center(child: Column(children: [
         // Image(image: Assets.images.said.provider()),
-        Text(MyStrings.dr_warning_disconect,style: AppStyle.mainTextStyleInput,),
+        Text(MyStrings.dr_warning_disconect,style: AppStyle.mainTextStyleContentEng,),
       ],),),
     );
   }

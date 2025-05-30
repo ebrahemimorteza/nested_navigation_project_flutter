@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nashreasar/tools/rout.dart';
 import 'package:nashreasar/tools/routes.dart';
+import 'package:nashreasar/view/component_screen/solidColor.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,11 +20,11 @@ class MyApp extends StatelessWidget {
     ]);
     //color to Status and navigate
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.white,
+      statusBarColor: SolidColor.dr_ColorMain,
       statusBarIconBrightness: Brightness.dark,
       // systemNavigationBarColor: SolidColor.statusBar,
       // systemNavigationBarColor: Color(0xFFb6ebef),
-      systemNavigationBarColor: Colors.white,
+      systemNavigationBarColor: SolidColor.dr_ColorMain,
       systemNavigationBarIconBrightness: Brightness.dark,
     ));
     return MaterialApp(
