@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:nashreasar/repository/repository_screen.dart';
 class NavigationIndex {
   NavigationIndex._();
   static const home = 0;
@@ -56,9 +57,9 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
       providers: [
-        // RepositoryProvider<Repository>(
-        //   create: (context) => Repository(),
-        // ),
+        RepositoryProvider<Repository>(
+          create: (context) => Repository(),
+        ),
       ],
       child: SafeArea(
         child: WillPopScope(
@@ -71,7 +72,16 @@ class _MainScreenState extends State<MainScreen> {
                       key:_homeKey,
                       onGenerateRoute: (sitting) =>
                           MaterialPageRoute(builder: (context) => Text("data")),
-                    )
+                    ),
+                    Navigator(key:_profileKey ,
+                      onGenerateRoute: (sitting) =>
+                          MaterialPageRoute(builder: (context) => Text("data")),),
+                    Navigator(key:_cartKey ,
+                      onGenerateRoute: (sitting) =>
+                          MaterialPageRoute(builder: (context) => Text("data")),),
+                    Navigator(key:_bookKey ,
+                      onGenerateRoute: (sitting) =>
+                          MaterialPageRoute(builder: (context) => Text("data")),),
                   ]
                     ,))
             ]),
