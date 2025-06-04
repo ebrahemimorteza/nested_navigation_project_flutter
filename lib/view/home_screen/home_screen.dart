@@ -6,6 +6,7 @@ import 'package:nashreasar/view/component_screen/style.dart';
 import 'package:nashreasar/view/home_screen/header_screen.dart';
 
 import '../component_screen/line_screen.dart';
+import '../product_screen/category_screen.dart';
 
 class Homescreen extends StatelessWidget {
   Homescreen({Key? Key, required this.size, required this.animateCart}) : super(key: Key);
@@ -31,7 +32,7 @@ class Homescreen extends StatelessWidget {
                 ),
                     LineScreen()
                   ]))),
-        // CategoryList(animateCart: animateCart,),
+        CategoryList(),
       ],
     );
   }
