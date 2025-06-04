@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:nashreasar/repository/repository_screen.dart';
+import 'package:nashreasar/view/cart_screen/cart_screen.dart';
 import 'package:nashreasar/view/home_screen/background_screen.dart';
 import 'package:nashreasar/view/home_screen/header_screen.dart';
 import 'package:nashreasar/view/home_screen/home_screen.dart';
@@ -99,7 +100,7 @@ class _MainScreenState extends State<MainScreen> {
                           MaterialPageRoute(builder: (context) => ProfileScreen()),),
                     Navigator(key:_cartKey ,
                       onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) => Text("data3")),),
+                          MaterialPageRoute(builder: (context) => CartScreen()),),
                     Navigator(key:_bookKey ,
                       onGenerateRoute: (sitting) =>
                           MaterialPageRoute(builder: (context) => Text("data4")),),
