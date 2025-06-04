@@ -11,10 +11,10 @@ class NavigationButton extends StatefulWidget {
     Key? Key,
     required this.changescreen,
     required this.selectedButtonHome,
-    required this.selectedButtonProfile,
     required this.selectedButtonCart,
     required this.selectedButtonBookMe,
     required this.selectedButtonSearch,
+    required this.selectedButtonProfile,
 
   }) : super(key: Key);
   int selectedButtonHome = 1;
@@ -89,7 +89,7 @@ class _NavigationButtonState extends State<NavigationButton> {
                           children: [
                             TextButton(
                               onPressed: () => {
-                                widget.changescreen(2),
+                                widget.changescreen(1),
                               },
                               child:icon(Icons.shopping_cart_outlined,MyStrings.nashr_cart,SolidColor.dr_appBlack2,size),
                               // iconSize: 35,
@@ -108,7 +108,7 @@ class _NavigationButtonState extends State<NavigationButton> {
                           children: [
                             TextButton(
                               onPressed: () => {
-                                widget.changescreen(3),
+                                widget.changescreen(2),
                               },
                               child:icon(Icons.local_library_outlined,MyStrings.nashr_book,SolidColor.dr_appBlack2,size),
                               // iconSize: 35,
@@ -127,7 +127,7 @@ class _NavigationButtonState extends State<NavigationButton> {
                           children: [
                             TextButton(
                               onPressed: () => {
-                                widget.changescreen(4),
+                                widget.changescreen(3),
                               },
                               child:icon(Icons.search,MyStrings.nashr_search,SolidColor.dr_appBlack2,size),
 
@@ -147,7 +147,7 @@ class _NavigationButtonState extends State<NavigationButton> {
                           children: [
                             TextButton(
                               onPressed: () => {
-                                widget.changescreen(1),
+                                widget.changescreen(4),
                               },
                               child:icon(Icons.person_outline_outlined,MyStrings.nashr_profile,SolidColor.dr_appBlack2,size),
                               // iconSize: 35,

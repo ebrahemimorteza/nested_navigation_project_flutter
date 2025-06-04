@@ -1,4 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:nashreasar/view/component_screen/MyString.dart';
+import 'package:nashreasar/view/component_screen/line_screen.dart';
+import 'package:nashreasar/view/component_screen/style.dart';
+import 'package:nashreasar/view/home_screen/header_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

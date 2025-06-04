@@ -9,14 +9,15 @@ import 'package:nashreasar/view/home_screen/header_screen.dart';
 import 'package:nashreasar/view/home_screen/home_screen.dart';
 import 'package:nashreasar/view/home_screen/navigation_screen.dart';
 import 'package:nashreasar/view/home_screen/search_screen.dart';
+import 'package:nashreasar/view/profile_screen/book_screen.dart';
 import 'package:nashreasar/view/profile_screen/profile_screen.dart';
 class NavigationIndex {
   NavigationIndex._();
   static const home = 0;
-  static const profile = 1;
-  static const cart = 2;
-  static const bookMee = 3;
-  static const search = 4;
+  static const cart = 1;
+  static const bookMee = 2;
+  static const search = 3;
+  static const profile = 4;
 }
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -47,10 +48,10 @@ class _MainScreenState extends State<MainScreen> {
   //create map for connect index and key
   late final map = {
     NavigationIndex.home: _homeKey,
-    NavigationIndex.profile: _profileKey,
     NavigationIndex.cart: _cartKey,
     NavigationIndex.bookMee: _bookKey,
     NavigationIndex.search: _searchKey,
+    NavigationIndex.profile: _profileKey,
 
   };
   int selectedIndex = NavigationIndex.home;
@@ -93,20 +94,20 @@ class _MainScreenState extends State<MainScreen> {
                     Navigator(
                       key:_homeKey,
                       onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) => Homescreen(size: size, animateCart: (val){})),
+                          MaterialPageRoute(builder: (context) =>selectedPageIndex==0 ? Homescreen(size: size, animateCart: (val){},param: selectedPageIndex,): Text('')),
                     ),
+                    Navigator(key:_cartKey ,
+                        onGenerateRoute: (sitting) =>
+                            MaterialPageRoute(builder: (context) =>selectedPageIndex==1 ?  Homescreen(size: size, animateCart: (val){},param: selectedPageIndex,) : Text('')),),
+                    Navigator(key:_bookKey ,
+                        onGenerateRoute: (sitting) =>
+                            MaterialPageRoute(builder: (context) =>selectedPageIndex==2 ?  Homescreen(size: size, animateCart: (val){},param: selectedPageIndex,) : Text('')),),
+                    Navigator(key:_searchKey ,
+                        onGenerateRoute: (sitting) =>
+                            MaterialPageRoute(builder: (context) =>selectedPageIndex==3 ?  Homescreen(size: size, animateCart: (val){},param: selectedPageIndex,) : Text('')),),
                     Navigator(key:_profileKey ,
                       onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) => ProfileScreen()),),
-                    Navigator(key:_cartKey ,
-                      onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) => CartScreen()),),
-                    Navigator(key:_bookKey ,
-                      onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) => Text("data4")),),
-                    Navigator(key:_searchKey ,
-                      onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) => SearchScreen()),),
+                          MaterialPageRoute(builder: (context) =>selectedPageIndex==4 ?  Homescreen(size: size, animateCart: (val){},param: selectedPageIndex,) : Text('')),),
                   ]
                     ,)),
               NavigationButton(
@@ -119,24 +120,24 @@ class _MainScreenState extends State<MainScreen> {
                         ? selectedButtonHome = 1
                         : selectedButtonHome = 0;
                     selectedPageIndex == 1
-                        ? selectedButtonProfile = 1
-                        : selectedButtonProfile = 0;
-                    selectedPageIndex == 2
                         ? selectedButtonCart = 1
                         : selectedButtonCart = 0;
-                    selectedPageIndex == 3
+                    selectedPageIndex == 2
                         ? selectedButtonBookMe = 1
                         : selectedButtonBookMe = 0;
-                    selectedPageIndex == 4
+                    selectedPageIndex == 3
                         ? selectedButtonSearch = 1
                         : selectedButtonSearch = 0;
+                    selectedPageIndex == 4
+                        ? selectedButtonProfile = 1
+                        : selectedButtonProfile = 0;
                   });
                 },
                 selectedButtonHome: selectedButtonHome,
-                selectedButtonProfile: selectedButtonProfile,
                 selectedButtonCart: selectedButtonCart,
                 selectedButtonBookMe: selectedButtonBookMe,
                 selectedButtonSearch: selectedButtonSearch,
+                selectedButtonProfile: selectedButtonProfile,
               )
             ]),
           ),

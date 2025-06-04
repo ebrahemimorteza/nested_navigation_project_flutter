@@ -1,4 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:nashreasar/view/component_screen/MyString.dart';
+import 'package:nashreasar/view/component_screen/line_screen.dart';
+import 'package:nashreasar/view/component_screen/style.dart';
+import 'package:nashreasar/view/home_screen/header_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -10,6 +14,7 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
+    print(">>>>>>>>>>>>>>>>>>>> search");
     var size = MediaQuery.sizeOf(context);
     return Padding(
       padding: EdgeInsets.only(top: size.height*0.3),
