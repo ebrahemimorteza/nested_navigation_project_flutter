@@ -7,6 +7,8 @@ import 'package:nashreasar/view/home_screen/background_screen.dart';
 import 'package:nashreasar/view/home_screen/header_screen.dart';
 import 'package:nashreasar/view/home_screen/home_screen.dart';
 import 'package:nashreasar/view/home_screen/navigation_screen.dart';
+import 'package:nashreasar/view/home_screen/search_screen.dart';
+import 'package:nashreasar/view/profile_screen/profile_screen.dart';
 class NavigationIndex {
   NavigationIndex._();
   static const home = 0;
@@ -94,7 +96,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     Navigator(key:_profileKey ,
                       onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) => Text("data2")),),
+                          MaterialPageRoute(builder: (context) => ProfileScreen()),),
                     Navigator(key:_cartKey ,
                       onGenerateRoute: (sitting) =>
                           MaterialPageRoute(builder: (context) => Text("data3")),),
@@ -103,7 +105,7 @@ class _MainScreenState extends State<MainScreen> {
                           MaterialPageRoute(builder: (context) => Text("data4")),),
                     Navigator(key:_searchKey ,
                       onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) => Text("data5")),),
+                          MaterialPageRoute(builder: (context) => SearchScreen()),),
                   ]
                     ,)),
               NavigationButton(
