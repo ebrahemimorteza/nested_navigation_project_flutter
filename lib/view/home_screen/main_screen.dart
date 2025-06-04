@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:nashreasar/repository/repository_screen.dart';
 import 'package:nashreasar/view/home_screen/background_screen.dart';
+import 'package:nashreasar/view/home_screen/header_screen.dart';
+import 'package:nashreasar/view/home_screen/home_screen.dart';
 import 'package:nashreasar/view/home_screen/navigation_screen.dart';
 class NavigationIndex {
   NavigationIndex._();
@@ -68,12 +70,13 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.sizeOf(context);
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider<Repository>(
           create: (context) => Repository(),
         ),
-      ],
+      ],  
       child: SafeArea(
         child: WillPopScope(
           onWillPop: _onWillPop,
@@ -81,21 +84,26 @@ class _MainScreenState extends State<MainScreen> {
             body: Stack(children: [
               Background(),
               Positioned.fill(
-                  child: IndexedStack(children: [
+                  child: IndexedStack(
+                    index: selectedPageIndex,
+                    children: [
                     Navigator(
                       key:_homeKey,
                       onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) => Text("data")),
+                          MaterialPageRoute(builder: (context) => Homescreen(size: size, animateCart: (val){})),
                     ),
                     Navigator(key:_profileKey ,
                       onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) => Text("data")),),
+                          MaterialPageRoute(builder: (context) => Text("data2")),),
                     Navigator(key:_cartKey ,
                       onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) => Text("data")),),
+                          MaterialPageRoute(builder: (context) => Text("data3")),),
                     Navigator(key:_bookKey ,
                       onGenerateRoute: (sitting) =>
-                          MaterialPageRoute(builder: (context) => Text("data")),),
+                          MaterialPageRoute(builder: (context) => Text("data4")),),
+                    Navigator(key:_searchKey ,
+                      onGenerateRoute: (sitting) =>
+                          MaterialPageRoute(builder: (context) => Text("data5")),),
                   ]
                     ,)),
               NavigationButton(

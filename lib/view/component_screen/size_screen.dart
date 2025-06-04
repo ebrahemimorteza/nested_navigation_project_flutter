@@ -28,6 +28,7 @@ class AppSize{
   static const double maxSizeText = 18.0;
   static const double midSizeText = 15.0;
   static const double minSizeText = 13.0;
+  static const double multiminSizeText = 9.0;
 
   // TODO size icon
   static const double maxSizeIcon = 18.0;

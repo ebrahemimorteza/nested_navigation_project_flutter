@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nashreasar/gen/assets.gen.dart';
 import 'package:nashreasar/view/component_screen/solidColor.dart';
 
 class Background extends StatelessWidget {
@@ -10,9 +11,14 @@ class Background extends StatelessWidget {
     // TODO: implement build
 
       return Container(
-        decoration: BoxDecoration(
-          color: SolidColor.dr_ColorMain
-        ),
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                image: Image(image: Assets.images.background.provider())
+                    .image,
+                // Replace with your own image path
+                fit: BoxFit.fill,
+              )
+          )
       );
 }
 }

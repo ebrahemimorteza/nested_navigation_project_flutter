@@ -7,18 +7,19 @@ class AppStyle {
   AppStyle._();//instance private to value static
 
   static TextStyle mainTextStyle = TextStyle(
-    fontFamily: "Insanibc2",
-    fontSize: 17,
+    fontFamily: "Vazirmatn",
+    fontSize: AppSize.multiminSizeText,
     fontWeight: FontWeight.normal,
     color: SolidColor.dr_appColor,
     textBaseline: TextBaseline.alphabetic
   );
 
   static TextStyle mainTextStyleTitle = TextStyle(
-      fontFamily: "Insanibc2",
-      fontSize: 20,
-      // fontWeight: FontWeight.w700,
-      color:Colors.white,
+      fontFamily: "Vazirmatn",
+      fontSize: AppSize.maxSizeText,
+      fontWeight: FontWeight.normal,
+      color: SolidColor.dr_appColor,
+      textBaseline: TextBaseline.alphabetic
   );
   static TextStyle mainTextStyleDel = TextStyle(
       fontFamily: "Insanibc2",
@@ -65,7 +66,7 @@ class AppStyle {
   );
   static TextStyle mainTextStyleContentEng = TextStyle(
       fontFamily: "Insanibc2",
-      fontSize: 12,
+      fontSize: 9.0,
       fontWeight: FontWeight.w700,
       color:Colors.white.withOpacity(0.9),
       decorationStyle: TextDecorationStyle.dotted
