@@ -15,13 +15,15 @@ class Repository {
     List<Category_model> category_list = [];
     // To get data I wrote an extension method bellow
 
-    var params = "do=Package.showCategoryAll&deviceType="+ box.read(deviceType);
+    var params = "do=Category_Product.showCategoryAll&deviceType=phone";
+    print(params);
     if (category_list.isEmpty) {
       await JJ().jjAjax(params).then((result) async {
-        print("ppppppp1");
+        // print(result.toString());
+        print("json");
         print(result);
         final json = jsonDecode(result);
-        print("json");
+        print(" 2222 ");
         print(json);
         if (json==400) {
           // JJ.jjToast(MyStrings.dr_warning);

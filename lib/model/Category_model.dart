@@ -1,5 +1,5 @@
 class Category_model{
-  int? id;
+  String? id;
   String? category_product_title;
   String? category_product_parent;
   String? category_product_picIcon;

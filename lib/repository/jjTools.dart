@@ -16,8 +16,8 @@ final dio = Dio();
 Map<String, String> headers = {};
 
 class JJ {
-  static const String server = "http://192.168.213.14:8080/NashrAsr/";
-  static const String serversocket = "ws://192.168.213.14:8080/NashrAsr";
+  static const String server = "http://192.168.150.14:8080/LAS/";
+  static const String serversocket = "ws://192.168.213.14:8081/NashrAsr";
   // static const String serversocket = "ws://192.168.21.14:8080/LAS/";
   // static const String server = "http://192.168.21.14:8080/LAS/";
   // static const String serversocket = "ws://188.136.136.71:8085/LASApp/";
